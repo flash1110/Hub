@@ -1,0 +1,12 @@
+server-selector:
+  name: "&aServer Selector"
+  material: COMPASS
+  slot: 1
+pvp-enabler:
+  name-when-disabled: "&cEnable PvP"
+  name-when-enabled: "&aDisable PvP"
+  on-material: EMERALD
+  off-material: REDSTONE
+  slot: 2
+timers: #In Seconds
+  pvp-change: 60

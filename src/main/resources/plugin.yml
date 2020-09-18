@@ -1,0 +1,3 @@
+name: HubPlugin
+main: com.flash.hub.Main
+version: 1.0.0
