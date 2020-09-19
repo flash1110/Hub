@@ -15,6 +15,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class PlayerListener implements Listener {
@@ -27,6 +28,13 @@ public class PlayerListener implements Listener {
 
         player.getInventory().setItem(ConfigValues.SERVER_SELECTOR_SLOT, getServerSelector());
         player.getInventory().setItem(ConfigValues.PvP_SLOT, getPvPItem(player));
+    }
+
+    @EventHandler
+    public void onPlayerQuit(PlayerQuitEvent event) {
+
+        if (HubProfile.getProfiles().containsKey(event.getPlayer().getUniqueId()))
+            HubProfile.getProfiles().remove(event.getPlayer().getUniqueId());
     }
 
     @EventHandler
